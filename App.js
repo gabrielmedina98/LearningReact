@@ -1,4 +1,27 @@
-import React from 'react';
+//(((PARTE 5 ))) -->>  FLEBOX E ALINHAMENTOS 
+/* import React from 'react';
+import {View, Text} from 'react-native';
+
+function App() {
+  return (
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-end',
+      }}>
+      <View style={{height: 50, width: 50, backgroundColor: '#121212'}} />
+
+      <View style={{height: 50, width: 50, backgroundColor: 'red'}} />
+
+      <View style={{height: 50, width: 50, backgroundColor: 'green'}} />
+    </View>
+  );
+} */
+
+//((((parte4)))) -->>  TAMANHOS DINAMICOS E FIXOS 
+/* import React from 'react';
 import {View, Text} from 'react-native';
 
 function App() {
@@ -9,8 +32,7 @@ function App() {
       <View style={{height: 65, backgroundColor: '#121233'}}> </View>
     </View>
   );
-}
-export default App;
+} */
 
 // ((parte da atividade 3))
 /* import React from 'react';
@@ -98,3 +120,5 @@ function Logo(props) {
   );
 }
  */
+
+export default App;
