@@ -1,4 +1,48 @@
-//(((PARTE 5 ))) -->>  FLEBOX E ALINHAMENTOS 
+//(((PArte 6 ))) -->> Recebendo dados de um input
+/* import React, {useState} from 'react';
+import {View, Text, TextInput, StyleSheet} from 'react-native';
+
+function App() {
+  const [nome, setNome] = useState('');
+
+  function pegaNome(texto) {
+    if (texto.lenght > 0) {
+      setNome('Bem vindo ' + texto);
+    } else {
+      setNome('');
+    }
+  }
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        placeholder="Digite seu nome"
+        onChangeText={text => pegaNome(text)}
+      />
+      <Text style={styles.texto}> {nome} </Text>
+    </View>
+  );
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  input: {
+    height: 45,
+    borderWidth: 1,
+    margin: 10,
+    padding: 10,
+    fontSize: 20,
+  },
+  texto: {
+    textAlign: 'center',
+    fontSize: 25,
+  },
+}); */
+
+
+//(((PARTE 5 ))) -->>  FLEBOX E ALINHAMENTOS
 /* import React from 'react';
 import {View, Text} from 'react-native';
 
@@ -20,7 +64,7 @@ function App() {
   );
 } */
 
-//((((parte4)))) -->>  TAMANHOS DINAMICOS E FIXOS 
+//((((parte4)))) -->>  TAMANHOS DINAMICOS E FIXOS
 /* import React from 'react';
 import {View, Text} from 'react-native';
 
