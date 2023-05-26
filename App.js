@@ -1,5 +1,41 @@
+import React from 'react';
+import {View, Text, Button, StyleSheet} from 'react-native';
+
+function App() {
+  return (
+    <View style={styles.area}>
+      <Text style={[styles.titulo, styles.textoAlinhado]}> Gabriel </Text>
+      <Text style={styles.titulo}> sujeitoprogramador </Text>
+      <Text style={[styles.subTitulo, styles.textoAlinhado]}>
+        Sou um texto 3
+      </Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  area: {
+    marginTop: 50,
+  },
+
+  titulo: {
+    fontSize: 20,
+    color: '#ff0000',
+  },
+  subTitulo: {
+    color: '#00ff00',
+    fontSize: 17,
+    marginTop: 15,
+  },
+  textoAlinhado: {
+    textAlign: 'center',
+  },
+});
+
+export default App;
+
 //entendo os States (((((parte 2 )))))
-import React, {useState} from 'react';
+/* import React, {useState} from 'react';
 import {View, Text, Image, Button} from 'react-native';
 
 function App() {
@@ -18,7 +54,7 @@ function App() {
   );
 }
 
-export default App;
+export default App; */
 
 //((parte 1))))
 /* function App() {
