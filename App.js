@@ -1,4 +1,19 @@
 import React from 'react';
+import {View, Text} from 'react-native';
+
+function App() {
+  return (
+    <View style={{flex: 1, backgroundColor: '#121233'}}>
+      <View style={{height: 65, backgroundColor: '#121233'}}> </View>
+      <View style={{flex: 1, backgroundColor: ''}}> </View>
+      <View style={{height: 65, backgroundColor: '#121233'}}> </View>
+    </View>
+  );
+}
+export default App;
+
+// ((parte da atividade 3))
+/* import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
 function App() {
@@ -6,9 +21,7 @@ function App() {
     <View style={styles.area}>
       <Text style={[styles.titulo, styles.textoAlinhado]}> Gabriel </Text>
       <Text style={styles.titulo}> sujeitoprogramador </Text>
-      <Text style={[styles.subTitulo, styles.textoAlinhado]}>
-        Sou um texto 3
-      </Text>
+      <Text style={[styles.subTitulo, styles.textoAlinhado]} >Sou um texto 3</Text>
     </View>
   );
 }
@@ -32,7 +45,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default App; */
 
 //entendo os States (((((parte 2 )))))
 /* import React, {useState} from 'react';
