@@ -1,4 +1,4 @@
-//entendo os Statates (((((parte 2 )))))
+//entendo os States (((((parte 2 )))))
 import React, {useState} from 'react';
 import {View, Text, Image, Button} from 'react-native';
 
