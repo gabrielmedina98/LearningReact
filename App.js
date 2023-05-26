@@ -1,8 +1,26 @@
-import React from 'react';
-import {View, Text, Image} from 'react-native';
+//entendo os Statates (((((parte 2 )))))
+import React, {useState} from 'react';
+import {View, Text, Image, Button} from 'react-native';
 
+function App() {
+  const [nome, setNome] = useState('igor');
+  const [idade, setIdade] = useState(25);
+  function entrar(nome, idade) {
+    setNome(nome);
+    setIdade(idade);
+  }
+  return (
+    <View style={{marginTop: 25}}>
+      <Button title="Mudar nome" onPress={() => entrar('Gabriel Medina', 25)} />
+      <Text style={{fontSize: 19}}>{nome}</Text>
+      <Text style={{fontSize: 15}}>{idade}</Text>
+    </View>
+  );
+}
 
+export default App;
 
+//((parte 1))))
 /* function App() {
   return (
     <View>
