@@ -11,14 +11,35 @@ import {
 
 function App() {
   const [img, setImg] = useState(require('./src/biscoito.png'));
+  const [textoFrase, setTextofrase] = useState('');
+  let frases = [
+    'Siga os bons e aprenda com eles.',
+    'O bom-senso vale mais do que muito conhecimento.',
+    'O riso é a menor distância entre duas pessoas.',
+    'Deixe de lado as preocupações e seja feliz.',
+    'Realize o óbvio, pense no improvável e conquiste o impossível.',
+    'Acredite em milagres, mas não dependa deles.',
+    'A maior barreira para o sucesso é o medo do fracasso.',
+  ];
+
+  function quebraBiscoito() {
+    let numeroAleatorio = Math.floor(Math.random() * frases.length);
+    setTextofrase(' " ' + frases[numeroAleatorio] + ' " ');
+    setImg(require('./src/biscoitoAberto.png'));
+  }
+
+  function zerarBiscoito() {
+    setImg(require('./src/biscoito.png'));
+    setTextofrase('');
+  }
 
   return (
     <View style={styles.container}>
       <Image source={img} style={styles.img} />
 
-      <Text style={styles.textofrase}> "Primeira frase" </Text>
+      <Text style={styles.textofrase}>{textoFrase} </Text>
 
-      <TouchableOpacity style={styles.botao} onPress={() => Alert('teste')}>
+      <TouchableOpacity style={styles.botao} onPress={quebraBiscoito}>
         <View style={styles.btnArea}>
           <Text style={styles.btnTexto}> Quebrar biscoito</Text>
         </View>
@@ -26,7 +47,7 @@ function App() {
 
       <TouchableOpacity
         style={[styles.botao, {marginTop: 15, borderColor: '#121212'}]}
-        onPress={() => Alert('teste')}>
+        onPress={zerarBiscoito}>
         <View style={styles.btnArea}>
           <Text style={[styles.btnTexto, {color: '#121212'}]}>
             Zerar Biscoito
