@@ -1,99 +1,48 @@
-//Atividade Biscoito da Sorte
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-  Alert,
-} from 'react-native';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 
-function App() {
-  const [img, setImg] = useState(require('./src/biscoito.png'));
-  const [textoFrase, setTextofrase] = useState('');
-  let frases = [
-    'Siga os bons e aprenda com eles.',
-    'O bom-senso vale mais do que muito conhecimento.',
-    'O riso é a menor distância entre duas pessoas.',
-    'Deixe de lado as preocupações e seja feliz.',
-    'Realize o óbvio, pense no improvável e conquiste o impossível.',
-    'Acredite em milagres, mas não dependa deles.',
-    'A maior barreira para o sucesso é o medo do fracasso.',
-  ];
-
-  function quebraBiscoito() {
-    let numeroAleatorio = Math.floor(Math.random() * frases.length);
-    setTextofrase(' " ' + frases[numeroAleatorio] + ' " ');
-    setImg(require('./src/biscoitoAberto.png'));
-  }
-
-  function zerarBiscoito() {
-    setImg(require('./src/biscoito.png'));
-    setTextofrase('');
-  }
+export default function App() {
+  const [feed, setFeed] = useState([
+    {id: '1', nome: 'Matheus', idade: 50, email: 'matheus@matheus.com'},
+    {id: '2', nome: 'Lucas', idade: 23, email: 'lucas@lucas.com'},
+    {id: '3', nome: 'Henrique', idade: 40, email: 'henri@henrique.com'},
+    {id: '4', nome: 'Ana', idade: 19, email: 'ana@ana.com'},
+    {id: '5', nome: 'José', idade: 29, email: 'jose@jose.com'},
+  ]);
 
   return (
     <View style={styles.container}>
-      <Image source={img} style={styles.img} />
-
-      <Text style={styles.textofrase}>{textoFrase} </Text>
-
-      <TouchableOpacity style={styles.botao} onPress={quebraBiscoito}>
-        <View style={styles.btnArea}>
-          <Text style={styles.btnTexto}> Quebrar biscoito</Text>
-        </View>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={[styles.botao, {marginTop: 15, borderColor: '#121212'}]}
-        onPress={zerarBiscoito}>
-        <View style={styles.btnArea}>
-          <Text style={[styles.btnTexto, {color: '#121212'}]}>
-            Zerar Biscoito
-          </Text>
-        </View>
-      </TouchableOpacity>
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={feed}
+        renderItem={({item}) => <Pessoa data={item} />}
+      />
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  areaPessoa: {
+    backgroundColor: '#121212',
+    height: 200,
+    marginBottom: 15,
     justifyContent: 'center',
-    alignItems: 'center',
   },
-  img: {
-    width: 230,
-    height: 230,
-  },
-
-  textofrase: {
+  textopessoa: {
+    color: '#FFF',
     fontSize: 20,
-    color: '#dd7b22',
-    margin: 30,
-    fontStyle: 'italic',
-    textAlign: 'center',
-  },
-
-  botao: {
-    width: 230,
-    height: 50,
-    borderColor: '#dd7b22',
-    borderWidth: 2,
-    borderRadius: 25,
-  },
-
-  btnArea: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  btnTexto: {
-    fontSize: 17,
-    fontWeight: 'bold',
-    color: '#dd7b22',
   },
 });
 
-export default App;
+function Pessoa(props) {
+  return (
+    <View style={styles.areaPessoa}>
+      <Text style={styles.textopessoa}>{props.data.nome}</Text>
+      <Text style={styles.textopessoa}>{props.data.idade}</Text>
+      <Text style={styles.textopessoa}>{props.data.email}</Text>
+    </View>
+  );
+}
